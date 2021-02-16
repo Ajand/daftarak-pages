@@ -1,7 +1,8 @@
 import React from "react";
-import { makeStyles, ButtonBase } from "@material-ui/core";
+import { makeStyles, ButtonBase, Paper, Grow } from "@material-ui/core";
 import PN from "persian-number";
-import { useTimer } from "use-timer";
+import Clock from "./Clock";
+
 import { ReactComponent as Start } from "../Icons/start.svg";
 import { ReactComponent as Done } from "../Icons/done.svg";
 
@@ -15,20 +16,22 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 300,
     maxHeight: 300,
     borderRadius: "100%",
-    background: theme.palette.container.main,
-    boxShadow: `5px 5px 10px ${theme.palette.container.firstShadow},  -5px -5px 10px ${theme.palette.container.secondShadow};`,
-    "&:active": {
-      background: theme.palette.container.main,
-    },
-    "&:hover": {
-      background: theme.palette.container.main,
-    },
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
   },
+  runningRoot: {
+    borderRadius: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "60vw",
+    height: "60vw",
+    maxWidth: 400,
+    maxHeight: 400,
+  },
   content: {
-    padding: theme.spacing(2),
+    //padding: theme.spacing(2),
   },
   icon: {
     width: "20vw",
@@ -40,14 +43,13 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "100%",
   },
   time: {
-    fontSize: theme.spacing(5)
-  }
+    fontSize: theme.spacing(5),
+  },
 }));
 
-const Timer = () => {
+const Timer = ({ setBg , time, start, pause, reset, status}) => {
   const classes = useStyles();
 
-  const { time, start, pause, reset, status } = useTimer();
 
   const renderStart = () => {
     return (
@@ -57,11 +59,32 @@ const Timer = () => {
     );
   };
 
+  if (status === "RUNNING") {
+    return (
+      <ButtonBase
+        onClick={() => {
+          if (status !== "RUNNING") {
+            setBg("active");
+            return start();
+          }
+          setBg("simp");
+          return pause();
+        }}
+        className={classes.borderRad}
+      >
+        <div className={classes.runningRoot}>
+          <Clock seconds={time} />
+        </div>
+      </ButtonBase>
+    );
+  }
+
   const renderDone = () => {
     return (
       <div className={classes.content}>
-        <Done className={classes.icon} />
-        <div className={classes.time}>{PN.convertEnToPe(renderTime(time))}</div>
+        {/*<Done className={classes.icon} />
+        <div className={classes.time}>{PN.convertEnToPe(renderTime(time))}</div>*/}
+        <Clock seconds={time} />
       </div>
     );
   };
@@ -78,12 +101,16 @@ const Timer = () => {
   return (
     <ButtonBase
       onClick={() => {
-        if (status !== "RUNNING") return start();
-        return pause()
+        if (status !== "RUNNING") {
+          setBg("active");
+          return start();
+        }
+        setBg("simp");
+        return pause();
       }}
       className={classes.borderRad}
     >
-      <div className={classes.root}>{renderContent()}</div>
+      <Paper className={classes.root}>{renderContent()}</Paper>
     </ButtonBase>
   );
 };
