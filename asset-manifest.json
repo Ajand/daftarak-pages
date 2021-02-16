@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/daftarak-pages/static/css/main.c940c927.chunk.css",
+    "main.js": "/daftarak-pages/static/js/main.2c9043dc.chunk.js",
+    "main.js.map": "/daftarak-pages/static/js/main.2c9043dc.chunk.js.map",
+    "runtime-main.js": "/daftarak-pages/static/js/runtime-main.8bf539b2.js",
+    "runtime-main.js.map": "/daftarak-pages/static/js/runtime-main.8bf539b2.js.map",
+    "static/js/2.6fd19410.chunk.js": "/daftarak-pages/static/js/2.6fd19410.chunk.js",
+    "static/js/2.6fd19410.chunk.js.map": "/daftarak-pages/static/js/2.6fd19410.chunk.js.map",
+    "static/js/3.1ae08618.chunk.js": "/daftarak-pages/static/js/3.1ae08618.chunk.js",
+    "static/js/3.1ae08618.chunk.js.map": "/daftarak-pages/static/js/3.1ae08618.chunk.js.map",
+    "index.html": "/daftarak-pages/index.html",
+    "static/css/main.c940c927.chunk.css.map": "/daftarak-pages/static/css/main.c940c927.chunk.css.map",
+    "static/js/2.6fd19410.chunk.js.LICENSE.txt": "/daftarak-pages/static/js/2.6fd19410.chunk.js.LICENSE.txt",
+    "static/media/done.08385652.svg": "/daftarak-pages/static/media/done.08385652.svg",
+    "static/media/start.23fa1e83.svg": "/daftarak-pages/static/media/start.23fa1e83.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8bf539b2.js",
+    "static/js/2.6fd19410.chunk.js",
+    "static/css/main.c940c927.chunk.css",
+    "static/js/main.2c9043dc.chunk.js"
+  ]
+}
