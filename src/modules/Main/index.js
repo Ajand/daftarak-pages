@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import { Assessment } from "@material-ui/icons";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import IconButton from "@material-ui/core/IconButton";
+import Button from "@material-ui/core/Button";
 import Timer from "./Timer";
 import { useTimer } from "use-timer";
 
 import PN from "persian-number";
 import { renderTime } from "../helpers";
+
+import Prompt from "../components/Prompt";
+import usePrompt from "../components/Prompt/usePrompt";
+import InstallTemplate from "../components/Prompt/templates/Install";
 
 const useStyles = makeStyles((theme) => ({
   "@keyframes gradient": {
@@ -91,6 +96,8 @@ const Main = () => {
   const classes = useStyles();
   const [bg, setBg] = useState("simp");
 
+  const prompt = usePrompt("نصب دفترک", InstallTemplate);
+
   const { time, start, pause, reset, status } = useTimer();
 
   const renderRootClass = () => {
@@ -106,29 +113,8 @@ const Main = () => {
 
   return (
     <div className={renderRootClass()}>
-      {/*<div className={classes.leftMenu}>
-        <Paper className={classes.btn}>
-          <IconButton onClick={() => {}} size="medium">
-            <Tomato width={30} height={30} />
-          </IconButton>
-        </Paper>
-
-        <Paper className={classes.btn}>
-          <div>
-            <IconButton onClick={() => console.log("hellow???")} size="medium">
-              <Flow width={30} height={30} />
-            </IconButton>
-          </div>
-        </Paper>
-        <Paper className={classes.btn}>
-          <div>
-            <IconButton onClick={() => console.log("hellow???")} size="medium">
-              <Music width={30} height={30} />
-            </IconButton>
-          </div>
-        </Paper>
-      </div>
-  */}
+      <Prompt prompt={prompt} />
+      <Button onClick={prompt.show}>Open Prompt</Button>
       <div className={classes.rightMenu}>
         <IconButton onClick={() => console.log("hellow???")} size="medium">
           <Assessment className={classes.icon} color="inherit" />

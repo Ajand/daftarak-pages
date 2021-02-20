@@ -26,7 +26,7 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontFamily: `"Vazir", "Javan"`
+    fontFamily: `"iransansdn","Vazir", "Javan"`
   }
 });
 
