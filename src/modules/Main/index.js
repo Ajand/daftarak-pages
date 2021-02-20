@@ -31,10 +31,9 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
     // position: "fixed",
     overflow: "hidden",
-    background: "linear-gradient(17deg, #f1f2b5, #135058)",
-
-    backgroundSize: "200% 200%",
-    animation: "$gradient 15s ease infinite",
+    backgroundSize: "100%",
+    background: 'url("/images/bg.png")',
+    //animation: "$gradient 15s ease infinite",
   },
   rootActive: {
     background: theme.palette.container.main,

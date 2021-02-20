@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    border: '5px solid black'
   },
   runningRoot: {
     borderRadius: "100%",
@@ -34,10 +35,10 @@ const useStyles = makeStyles((theme) => ({
     //padding: theme.spacing(2),
   },
   icon: {
-    width: "20vw",
-    height: "20vw",
-    maxWidth: 100,
-    maxHeight: 100,
+    width: "40vw",
+    height: "40vw",
+    maxWidth: 200,
+    maxHeight: 200,
   },
   borderRad: {
     borderRadius: "100%",

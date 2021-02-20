@@ -8,6 +8,8 @@ import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 
+import Divider from '../Divider'
+
 const styles = (theme) => ({
   root: {
     margin: 0,
@@ -19,20 +21,23 @@ const styles = (theme) => ({
     top: theme.spacing(1),
     color: theme.palette.grey[500],
   },
+  title: {
+    fontFamily: 'Javan'
+  }
 });
 
 const DialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose } = props;
   return (
     <MuiDialogTitle disableTypography className={classes.root}>
-      <Typography variant="h6">{children}</Typography>
+      <Typography className={classes.title} variant="h6">{children}</Typography>
       {onClose ? (
         <IconButton
           aria-label="Close"
           className={classes.closeButton}
           onClick={onClose}
         >
-          <CloseIcon />
+          <CloseIcon style={{ color: "black" }} />
         </IconButton>
       ) : null}
     </MuiDialogTitle>
@@ -49,6 +54,8 @@ const DialogContent = withStyles((theme) => ({
 const useStyles = makeStyles(() => ({
   root: {
     minWidth: 300,
+    border: "4px solid black",
+    borderRadius: 5,
   },
 }));
 
@@ -63,12 +70,13 @@ const Prompt = ({ prompt }) => {
         onClose={prompt.hide}
         aria-labelledby="customized-dialog-title"
         open={prompt.isOpen}
-        className={classes.root}
+        classes={{ root: classes.root }}
       >
         <DialogTitle id="customized-dialog-title" onClose={prompt.hide}>
           {prompt.title}
         </DialogTitle>
-        <DialogContent dividers>
+        <Divider />
+        <DialogContent >
           <Template prompt={prompt} />
         </DialogContent>
       </Dialog>
