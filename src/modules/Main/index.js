@@ -41,10 +41,8 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
     // position: "fixed",
     overflow: "hidden",
-    background: "linear-gradient(45deg, #360033 0%, #0b8793 100%)",
-
-    backgroundSize: "200% 200%",
-    animation: "$gradient 15s ease infinite",
+    backgroundSize: "100%",
+    background: 'url("/images/bg.png")',
   },
   btns: {
     borderRadius: "100%",

@@ -1687,6 +1687,13 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
+"@types/react@^15.0.0 || ^16.0.0":
+  version "16.14.4"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.14.4.tgz#365f6a1e117d1eec960ba792c7e1e91ecad38e6f"
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^3.0.2"
+
 "@types/resolve@0.0.8":
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/@types/resolve/-/resolve-0.0.8.tgz#f26074d238e02659e323ce1a13d041eee280e194"
@@ -8057,7 +8064,7 @@ prompts@2.4.0, prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   dependencies:
@@ -8243,6 +8250,13 @@ react-dom@^17.0.1:
 react-error-overlay@^6.0.9:
   version "6.0.9"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.9.tgz#3c743010c9359608c375ecd6bc76f35d93995b0a"
+
+react-focus-within@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-focus-within/-/react-focus-within-2.0.2.tgz#2ce2922b36bb8ebb4167a9e1fd32d2293240225e"
+  dependencies:
+    "@types/react" "^15.0.0 || ^16.0.0"
+    prop-types "^15.6.1"
 
 react-grid-system@^7.1.1:
   version "7.1.1"

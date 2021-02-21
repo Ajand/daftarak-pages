@@ -11,6 +11,7 @@ import rtl from "jss-rtl";
 import DataProvider from "./DataProvider";
 
 import Main from "./modules/Main";
+import EventForm from './modules/Main/EventForm'
 import GuestHandler from "./modules/containers/GuestHandler";
 
 const theme = createMuiTheme({

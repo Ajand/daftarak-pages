@@ -1,5 +1,8 @@
 import React from "react";
-import { makeStyles, TextField, Paper } from "@material-ui/core";
+import { makeStyles, Paper } from "@material-ui/core";
+
+import TextField from '../components/TextField'
+import TopicField from '../components/TopicField'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,40 +24,9 @@ const useStyles = makeStyles((theme) => ({
 const EventForm = () => {
   const classes = useStyles();
   return (
-    <Paper className={classes.root}>
-      <TextField
-        label="نام درس"
-        fullWidth
-        variant="outlined"
-        margin="normal"
-        size="small"
-        className={classes.field}
-      />
-       <TextField
-        label="نام فصل"
-        fullWidth
-        variant="outlined"
-        margin="normal"
-        size="small"
-        className={classes.field}
-      />
-       <TextField
-        label="تگ‌ها"
-        fullWidth
-        variant="outlined"
-        margin="normal"
-        size="small"
-        className={classes.field}
-      />
-      <TextField
-        label="توضیحات"
-        fullWidth
-        variant="outlined"
-        margin="normal"
-        size="small"
-        className={classes.field}
-      />
-    </Paper>
+    <div style={{padding: 20}}>
+      <TopicField />
+    </div>
   );
 };
 

@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles, ButtonBase, Paper, Grow } from "@material-ui/core";
 import PN from "persian-number";
 import Clock from "./Clock";
+import NewClock from './NewClock'
 
 import { ReactComponent as Start } from "../Icons/start.svg";
 import { ReactComponent as Done } from "../Icons/done.svg";
@@ -74,7 +75,7 @@ const Timer = ({ setBg , time, start, pause, reset, status}) => {
         className={classes.borderRad}
       >
         <div className={classes.runningRoot}>
-          <Clock seconds={time} />
+          <NewClock seconds={time} />
         </div>
       </ButtonBase>
     );

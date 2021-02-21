@@ -1,0 +1,254 @@
+import React from "react";
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  root: {},
+  day: {
+    fill: "black",
+    fontSize: 32,
+    fontFamily: "Javan",
+  },
+}));
+
+const Clock = ({ seconds }) => {
+  return (
+    <svg
+      width="60vw"
+      height="60vw"
+      viewBox="46.5 194.5 321 321"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0)">
+        <circle
+          cx="207"
+          cy="355"
+          r="160.5"
+          fill="white"
+          stroke="black"
+          stroke-width="3"
+        />
+        <circle
+          cx="207"
+          cy="356"
+          r="132.5"
+          fill="#01D7F9"
+          stroke="black"
+          stroke-width="3"
+        />
+        <circle
+          cx="207"
+          cy="358"
+          r="65.5"
+          fill="#FCC00A"
+          stroke="black"
+          stroke-width="3"
+        />
+        <circle
+          cx="158.5"
+          cy="308.5"
+          r="47"
+          fill="#6D40D2"
+          stroke="black"
+          stroke-width="3"
+        />
+        <circle
+          cx="255.5"
+          cy="406.5"
+          r="47"
+          fill="#B7076C"
+          stroke="black"
+          stroke-width="3"
+        />
+        <circle
+          cx="207"
+          cy="235"
+          r="5"
+          fill="#FF5555"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="268"
+          cy="252"
+          r="5"
+          fill="#FF5555"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="313"
+          cy="297"
+          r="5"
+          fill="#FF5555"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="327"
+          cy="357"
+          r="5"
+          fill="#FF5555"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="311"
+          cy="416"
+          r="5"
+          fill="#FF5555"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="267"
+          cy="461"
+          r="5"
+          fill="#FF5555"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="207"
+          cy="476"
+          r="5"
+          fill="#FF5555"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="148"
+          cy="460"
+          r="5"
+          fill="#FF5555"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="104"
+          cy="417"
+          r="5"
+          fill="#FF5555"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="88"
+          cy="357"
+          r="5"
+          fill="#FF5555"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="102"
+          cy="296"
+          r="5"
+          fill="#FF5555"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="146"
+          cy="251"
+          r="5"
+          fill="#FF5555"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="159"
+          cy="272"
+          r="5"
+          fill="white"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="195"
+          cy="310"
+          r="5"
+          fill="white"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="159"
+          cy="346"
+          r="5"
+          fill="white"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="121"
+          cy="310"
+          r="5"
+          fill="white"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="256"
+          cy="370"
+          r="5"
+          fill="#FCC00A"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="292"
+          cy="408"
+          r="5"
+          fill="#FCC00A"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="256"
+          cy="444"
+          r="5"
+          fill="#FCC00A"
+          stroke="black"
+          stroke-width="2"
+        />
+        <circle
+          cx="218"
+          cy="408"
+          r="5"
+          fill="#FCC00A"
+          stroke="black"
+          stroke-width="2"
+        />
+        <path
+          d="M250.284 417L256.001 387.291L261.718 417H250.284Z"
+          transform={`rotate(${0 + (seconds)*0.1/12} 255.5 406.5)`}
+          fill="#6D40D2"
+          stroke="black"
+          stroke-width="2"
+        />
+        <path
+          d="M152.282 319L158 289.291L163.717 319H152.282Z"
+          transform={`rotate(${0 + (seconds%3600)*0.1} 158.5 308.5)`}
+          fill="#B7076C"
+          stroke="black"
+          stroke-width="2"
+        />
+        <path
+          d="M249.105 360.86L134.1 367.046L245.388 337.39L249.105 360.86Z"
+          transform={`rotate(${99 + (seconds % 60) * 6 } 207 356)`}
+          fill="#FF5555"
+          stroke="black"
+          stroke-width="2"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0">
+          <rect width="414" height="896" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+export default Clock;

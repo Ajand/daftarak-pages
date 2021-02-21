@@ -55,7 +55,7 @@ const useStyles = makeStyles(() => ({
   root: {
     minWidth: 300,
     border: "4px solid black",
-    borderRadius: 5,
+    borderRadius: 20,
   },
 }));
 
@@ -63,14 +63,14 @@ const Prompt = ({ prompt }) => {
   const classes = useStyles();
 
   const { Template } = prompt;
-
+  
   return (
     <div>
       <Dialog
         onClose={prompt.hide}
         aria-labelledby="customized-dialog-title"
         open={prompt.isOpen}
-        classes={{ root: classes.root }}
+        classes={{ paper: classes.root }}
       >
         <DialogTitle id="customized-dialog-title" onClose={prompt.hide}>
           {prompt.title}
