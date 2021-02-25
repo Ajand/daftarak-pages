@@ -28,7 +28,7 @@ const InstallTemplate = ({ prompt }) => {
       <div className={classes.action}>
         <Row>
           <Col xs={6}>
-            <DaftarakButton onClick={() => prompt.hide()} buttonStyle="yellow">
+            <DaftarakButton onClick={() => prompt.hide()} buttonStyle="blue">
               بیخیال
             </DaftarakButton>
           </Col>

@@ -9,8 +9,9 @@ const useStyles = makeStyles((theme) => ({
     background: "linear-gradient(110deg, #FC2C2A 35%, #FF524E 35%)",
     padding: theme.spacing(1),
     borderRadius: 100,
-    border: "3px solid black",
+    border: "3px solid #130A36",
     cursor: "pointer",
+    color: "#130A36",
   },
   yellow: {
     fontFamily: "Javan",
@@ -19,18 +20,21 @@ const useStyles = makeStyles((theme) => ({
     background: "linear-gradient(110deg, #E9B92E 35%, #F9DB00 35%)",
     padding: theme.spacing(1),
     borderRadius: 100,
-    border: "3px solid black",
+    border: "3px solid #130A36",
     cursor: "pointer",
+    color: "#130A36",
   },
   blue: {
     fontFamily: "Javan",
     fontSize: "1.2em",
     textAlign: "center",
-    background: "linear-gradient(110deg, #00B2F5 35%, #52D8FE 35%)",
+    background: "linear-gradient(110deg, #617be2 35%, #576fcb 35%)",
     padding: theme.spacing(1),
     borderRadius: 100,
-    border: "3px solid black",
+    border: "3px solid #130A36",
     cursor: "pointer",
+    color: "white",
+
   },
   purple: {
     fontFamily: "Javan",
@@ -39,8 +43,19 @@ const useStyles = makeStyles((theme) => ({
     background: "linear-gradient(110deg, #753EFE 35%,   #6630DE 35%)",
     padding: theme.spacing(1),
     borderRadius: 100,
-    border: "3px solid black",
+    border: "3px solid #130A36",
     color: "white",
+    cursor: "pointer",
+  },
+  green: {
+    fontFamily: "Javan",
+    fontSize: "1.2em",
+    textAlign: "center",
+    background: "linear-gradient(110deg, #479967 35%,   #4faa72 35%)",
+    padding: theme.spacing(1),
+    borderRadius: 100,
+    border: "3px solid #130A36",
+    color: "#130A36",
     cursor: "pointer",
   },
 }));
@@ -57,7 +72,7 @@ const Button = ({ children, buttonStyle, ...rest }) => {
       case "purple":
         return classes.purple;
       default:
-        return classes.red;
+        return classes.green;
     }
   };
 

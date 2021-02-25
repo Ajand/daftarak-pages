@@ -5,16 +5,17 @@ import { Close, Add } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    border: "3px solid black",
+    border: "3px solid #130A36",
     borderRadius: theme.spacing(1),
     width: "100%",
     padding: theme.spacing(0.25),
     overflow: "hidden",
     boxSizing: "border-box",
     "&:focus-within": {
-      border: "3px solid #6D40D2",
+      border: "3px solid #617be2",
     },
     position: "relative",
+    color: '#130A36'
   },
   label: {
     fontFamily: "Javan",
@@ -22,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0.25),
     display: "inline-block",
     whiteSpace: "nowrap",
+    color: '#130A36'
+
   },
   disabledRoot: {
     border: "3px solid #888",
@@ -51,23 +54,28 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0.25),
     paddingRight: theme.spacing(1),
     outline: "0px !important",
+    color: '#130A36',
   },
   inputContainer: {
     display: "flex",
   },
   suggestRoot: {
     marginTop: theme.spacing(2),
-    border: "3px solid black",
+    border: "3px solid #130A36",
     borderRadius: theme.spacing(1),
     padding: theme.spacing(0.25),
     maxHeight: 200,
     overflow: "auto",
     boxSizing: "border-box",
+    color: '#130A36'
+
   },
   suggestItem: {
     fontFamily: "Javan",
     fontSize: "1.8em",
     padding: theme.spacing(0.25),
+    color: '#130A36'
+
   },
   multiBadgesContainer: {
     marginTop: theme.spacing(1),
@@ -76,21 +84,23 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(2),
     overflowX: "auto",
     overflowY: "hidden",
-    //justifyContent: 'flex-start',
     alignItems: "baseline",
-    //alignContent: "center"
+    color: '#130A36'
+
   },
   badge: {
     padding: "4px 4px 4px 14px",
-    border: "3px solid black",
+    border: "3px solid #130A36",
     marginRight: theme.spacing(1),
     fontFamily: "Javan",
     fontSize: "2em",
     borderRadius: 50,
     display: "flex",
-    //flexGrow: 2
     whiteSpace: "nowrap",
     alignItems: "center",
+    color: '#130A36',
+    background: "#f0f7fb",
+
   },
 
   badgeText: {
@@ -98,25 +108,28 @@ const useStyles = makeStyles((theme) => ({
   },
   badgeDelete: {
     display: "flex",
-    border: "3px solid black",
+    border: "3px solid #130A36",
     width: 40,
     height: 40,
     borderRadius: 40,
     alignItems: "center",
     justifyContent: "center",
-    background: "#FF524E",
+    background: "#F8DF6D",
     marginLeft: theme.spacing(2),
     cursor: "pointer",
+    color: '#130A36',
+
   },
   addBadgeButton: {
-    border: "3px solid black",
+    border: "3px solid #130A36",
     width: 40,
     height: 40,
     display: "flex",
     borderRadius: 40,
     alignItems: "center",
     justifyContent: "center",
-    background: "#F9DB00",
+    background: "#479967",
+    color: '#130A36',
     marginLeft: theme.spacing(2),
     cursor: "pointer",
     position: "absolute",

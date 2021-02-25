@@ -59,7 +59,7 @@ const EventForm = () => {
         />
       </div>
       <div className={classes.section}>
-        <Button buttonStyle="purple">ثبت</Button>
+        <Button buttonStyle="blue">ثبت</Button>
       </div>
     </div>
   );
