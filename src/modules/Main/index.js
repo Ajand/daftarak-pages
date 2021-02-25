@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Assessment } from "@material-ui/icons";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core/Button";
 import Timer from "./Timer";
 import { useTimer } from "use-timer";
 
@@ -12,6 +11,8 @@ import { renderTime } from "../helpers";
 import Prompt from "../components/Prompt";
 import usePrompt from "../components/Prompt/usePrompt";
 import InstallTemplate from "../components/Prompt/templates/Install";
+import Slider from "../components/Slider";
+import EventForm from "./EventForm";
 
 const useStyles = makeStyles((theme) => ({
   "@keyframes gradient": {
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     // position: "fixed",
     overflow: "hidden",
     backgroundSize: "100%",
-    background: 'url("/images/bg.png")',
+    background: 'url("/images/bg2.png")',
   },
   btns: {
     borderRadius: "100%",
@@ -83,9 +84,33 @@ const useStyles = makeStyles((theme) => ({
     bottom: theme.spacing(10),
     fontSize: theme.spacing(5),
     fontFamily: "Javan",
-    width: "100%",
-    color: "white",
+    width: "80%",
+    color: "#FF5555",
     textAlign: "center",
+    border: "4px solid black",
+    boxSizing: "border-box",
+    background: "white",
+    right: "10%",
+  },
+  "@keyframes eventPopper": {
+    "0%": {
+      height: 0,
+    },
+    "100%": {
+      height: "60vh",
+    },
+  },
+  eventFormContainer: {
+    width: "100%",
+    background: "white",
+    bottom: 0,
+    position: "absolute",
+    border: "4px solid black",
+    borderBottom: 0,
+    height: "60vh",
+    borderRadius: "20px 20px 0 0",
+    boxSizing: "border-box",
+    // animation: "$eventPopper 1s ease-out",
   },
 }));
 
@@ -96,6 +121,8 @@ const Main = () => {
   const prompt = usePrompt("نصب دفترک", InstallTemplate);
 
   const { time, start, pause, reset, status } = useTimer();
+
+  console.log(status);
 
   const renderRootClass = () => {
     switch (bg) {
@@ -111,9 +138,8 @@ const Main = () => {
   return (
     <div className={renderRootClass()}>
       <Prompt prompt={prompt} />
-      <Button onClick={prompt.show}>Open Prompt</Button>
       <div className={classes.rightMenu}>
-        <IconButton onClick={() => console.log("hellow???")} size="medium">
+        <IconButton onClick={prompt.show} size="medium">
           <Assessment className={classes.icon} color="inherit" />
         </IconButton>
       </div>
@@ -130,6 +156,11 @@ const Main = () => {
       {status == "RUNNING" && (
         <div className={classes.time}>{PN.convertEnToPe(renderTime(time))}</div>
       )}
+      <Slider open={status === "PAUSED"}>
+        <div>
+          <EventForm />
+        </div>
+      </Slider>
     </div>
   );
 };

@@ -33,10 +33,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TextField = ({ label, name, type = "text" }) => {
+const TextField = ({ label, name, type = "text", disabled = false }) => {
   const classes = useStyles();
 
   const [value, setValue] = useState("");
+
+  if(disabled) (
+    <div className={classes.disabledRoot}>
+      <div className={classes.disabledContainer}>
+        <label className={classes.disabledLabel} htmlFor={name}>
+          {label}:
+        </label>
+        <input
+          className={classes.input}
+          disabled={true}
+        />
+      </div>
+    </div>
+  )
 
   return (
     <div className={classes.root}>

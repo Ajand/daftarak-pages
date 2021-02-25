@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
     borderRadius: 100,
     border: "3px solid black",
+    cursor: "pointer",
   },
   yellow: {
     fontFamily: "Javan",
@@ -19,15 +20,28 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
     borderRadius: 100,
     border: "3px solid black",
+    cursor: "pointer",
   },
   blue: {
     fontFamily: "Javan",
     fontSize: "1.2em",
     textAlign: "center",
-    background: "linear-gradient(110deg, #FC2C2A 35%, #FF524E 35%)",
+    background: "linear-gradient(110deg, #00B2F5 35%, #52D8FE 35%)",
     padding: theme.spacing(1),
     borderRadius: 100,
     border: "3px solid black",
+    cursor: "pointer",
+  },
+  purple: {
+    fontFamily: "Javan",
+    fontSize: "1.2em",
+    textAlign: "center",
+    background: "linear-gradient(110deg, #753EFE 35%,   #6630DE 35%)",
+    padding: theme.spacing(1),
+    borderRadius: 100,
+    border: "3px solid black",
+    color: "white",
+    cursor: "pointer",
   },
 }));
 
@@ -38,6 +52,10 @@ const Button = ({ children, buttonStyle, ...rest }) => {
     switch (buttonStyle) {
       case "yellow":
         return classes.yellow;
+      case "blue":
+        return classes.blue;
+      case "purple":
+        return classes.purple;
       default:
         return classes.red;
     }

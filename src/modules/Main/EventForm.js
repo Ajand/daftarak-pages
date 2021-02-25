@@ -1,31 +1,66 @@
 import React from "react";
 import { makeStyles, Paper } from "@material-ui/core";
 
-import TextField from '../components/TextField'
-import TopicField from '../components/TopicField'
+import Button from "../components/Button";
+import TopicField from "../components/TopicField";
+import AutoSuggestField from "../components/AutoSuggestField";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    fontFamily: "Javan !important",
-    width: '90%',
-    margin: 'auto',
-   /* background: `linear-gradient(145deg, #ffffff, #d9d9d9);`,
-    boxShadow: `  20px 20px 60px #cdcdcd,
-    -20px -20px 60px #ffffff;`,*/
-    boxSizing: 'border-box',
-    borderRadius: theme.spacing(1),
-    padding: `${theme.spacing(0.5)}px ${theme.spacing(2)}px ${theme.spacing(1)}px`
-  },
-  field: {
-    fontFamily: "Vazir !important",
+  root: {},
+  section: {
+    marginBottom: theme.spacing(2),
   },
 }));
+
+const topics = [
+  "ریاضی",
+  "فیزیک",
+  "شیمی",
+  "زیست",
+  "زبان",
+  "هدیه‌",
+  "عربی",
+  "اجتماعی",
+];
+
+const subjects = [
+  "دنباله",
+  "حد",
+  "تابع",
+  "مشتق",
+  "انتگرال",
+  "نظریه گراف",
+  "معادله دیفرانسیل",
+];
+
+const tags = ["درس", "آزمون", "تمرین", "تست", "۸ کتاب", "ایده‌آلی مستدام", "منشور دانش", "سالاریها"];
 
 const EventForm = () => {
   const classes = useStyles();
   return (
-    <div style={{padding: 20}}>
-      <TopicField />
+    <div>
+      <div className={classes.section}>
+        <AutoSuggestField name="topics" label=" لیست درس" suggestions={topics} />
+      </div>
+      <div className={classes.section}>
+        <AutoSuggestField
+          name="topics"
+          disabled
+          label="بخش"
+          suggestions={subjects}
+        />
+      </div>
+      <div className={classes.section}>
+        <AutoSuggestField
+          name="tags"
+          label="تگ‌ها"
+          suggestions={tags}
+          multi
+        />
+      </div>
+      <div className={classes.section}>
+        <Button buttonStyle="purple">ثبت</Button>
+      </div>
     </div>
   );
 };
