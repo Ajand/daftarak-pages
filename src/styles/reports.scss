@@ -1,0 +1,129 @@
+.report-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: $primary;
+  border-bottom: 3px solid $border_color;
+
+}
+
+.report-header-container {
+  background-color: $primary_dark;
+  position: relative;
+
+}
+
+.report-header-month-year-container {
+  background-color: $secondary_dark;
+  font-family: Javan;
+  color: $text_light;
+  font-size: 2em;
+  text-align: center;
+  border: 4px solid $border_color;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.report-header-month-year-icon {
+  background-color: $secondary_light;
+  font-size: 0.5em;
+  border-radius: 100px;
+  border: 3px solid $border_color;
+  color: $text_dark;
+  @include icon(35px);
+}
+
+.report-header-day-titles {
+  padding: 0.25em 1em;
+  box-sizing: border-box;
+  border: 4px solid $border_color;
+  border-top: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  //max-height: 60px;
+  overflow: hidden;
+  background-color: $accent_red_dark;
+}
+
+.report-header-day-title-item {
+  @include icon(40px);
+  border: 3px solid $border_color;
+  background-color: $accent_red_light;
+  color: $text_dark;
+  border-radius: 100px;
+  font-family: Javan;
+  font-size: 1.5em;
+}
+
+.report-header-day-picker {
+  padding: 1em;
+  box-sizing: border-box;
+  border: 4px solid $border_color;
+  border-top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-height: 70px;
+  transition: max-height $transition_time ease-out;
+  overflow: hidden;
+}
+
+.report-header-day-picker-expanded {
+  max-height: 500px;
+  transition: max-height $transition_time ease-in;
+}
+
+.report-header-day-picker-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0px;
+}
+
+.report-header-day-picker-item {
+  @include icon(40px);
+  border: 3px solid $border_color;
+  background-color: $accent_green_light;
+  color: $text_dark;
+  border-radius: 100px;
+  font-family: Javan;
+  font-size: 2em;
+  cursor: pointer;
+  transition: all $transition_time ease;
+
+}
+
+.report-header-day-picker-item-today {
+  background-color: $accent_orange_light;
+  transition: all $transition_time ease;
+}
+
+.report-header-day-picker-item-active {
+  background-color: $accent_red;
+  border-style: dashed;
+  transition: all $transition_time ease;
+}
+
+.report-header-day-picker-item-disabled {
+  background-color: $disabled_color;
+  cursor: not-allowed;
+}
+
+.report-header-day-picker-expander {
+  @include icon(30px);
+  position: absolute;
+  bottom: -20px;
+  right: 16px;
+  background-color: $accent_orange_dark;
+  border: 3px solid $border_color;
+  border-radius: 100px;
+  color: $text_dark;
+  transform: rotate(0deg);
+  transition: transform $transition_time ease-in;
+}
+
+.report-header-day-picker-expander-expanded {
+  transform: rotate(180deg);
+  transition: transform $transition_time ease-in;
+}

@@ -1,0 +1,8 @@
+@mixin icon($size) {
+  width: $size;
+  height: $size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

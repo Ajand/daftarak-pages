@@ -19,14 +19,14 @@ const Clock = ({ seconds }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0)">
+      <g clipPath="url(#clip0)">
         <circle
           cx="207"
           cy="355"
           r="160.5"
           fill="#B6BCD1"
           stroke="#130A36"
-          stroke-width="3"
+          strokeWidth="3"
         />
         <circle
           cx="207"
@@ -34,7 +34,7 @@ const Clock = ({ seconds }) => {
           r="132.5"
           fill="#F3E8E7"
           stroke="#130A36"
-          stroke-width="3"
+          strokeWidth="3"
         />
         <circle
           cx="207"
@@ -42,7 +42,7 @@ const Clock = ({ seconds }) => {
           r="65.5"
           fill="#F8DF6D"
           stroke="#130A36"
-          stroke-width="3"
+          strokeWidth="3"
         />
         <circle
           cx="158.5"
@@ -50,7 +50,7 @@ const Clock = ({ seconds }) => {
           r="47"
           fill="#617BE2"
           stroke="#130A36"
-          stroke-width="3"
+          strokeWidth="3"
         />
         <circle
           cx="255.5"
@@ -58,7 +58,7 @@ const Clock = ({ seconds }) => {
           r="47"
           fill="#B6BCD1"
           stroke="#130A36"
-          stroke-width="3"
+          strokeWidth="3"
         />
         <circle
           cx="207"
@@ -66,7 +66,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#4FAA72"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="268"
@@ -74,7 +74,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#4FAA72"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="313"
@@ -82,7 +82,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#4FAA72"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="327"
@@ -90,7 +90,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#4FAA72"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="311"
@@ -98,7 +98,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#4FAA72"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="267"
@@ -106,7 +106,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#4FAA72"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="207"
@@ -114,7 +114,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#4FAA72"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="148"
@@ -122,7 +122,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#4FAA72"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="104"
@@ -130,7 +130,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#4FAA72"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="88"
@@ -138,7 +138,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#4FAA72"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="102"
@@ -146,7 +146,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#4FAA72"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="146"
@@ -154,7 +154,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#4FAA72"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="159"
@@ -162,7 +162,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="white"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="195"
@@ -170,7 +170,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="white"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="159"
@@ -178,7 +178,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="white"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="121"
@@ -186,7 +186,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="white"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="256"
@@ -194,7 +194,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#F8DF6D"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="292"
@@ -202,7 +202,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#F8DF6D"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="256"
@@ -210,7 +210,7 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#F8DF6D"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <circle
           cx="218"
@@ -218,28 +218,28 @@ const Clock = ({ seconds }) => {
           r="5"
           fill="#F8DF6D"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <path
           transform={`rotate(${0 + (seconds * 0.1) / 12} 255.5 406.5)`}
           d="M250.284 417L256.001 387.291L261.718 417H250.284Z"
           fill="#617BE2"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <path
           transform={`rotate(${0 + (seconds % 3600) * 0.1} 158.5 308.5)`}
           d="M152.282 319L158 289.291L163.717 319H152.282Z"
           fill="#B6BCD1"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <path
           transform={`rotate(${99 + (seconds % 60) * 6} 207 356)`}
           d="M249.105 360.86L134.1 367.046L245.388 337.39L249.105 360.86Z"
           fill="#4FAA72"
           stroke="#130A36"
-          stroke-width="2"
+          strokeWidth="2"
         />
       </g>
       <defs>

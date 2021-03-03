@@ -114,16 +114,60 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const useProperTimer = () => {
+  const [startAt, setStartAt] = useState(null);
+  const [endAt, setEndAt] = useState(null);
+  const [status, setStatus] = useState(null);
+  const { time, start, pause, reset } = useTimer();
+
+  console.log(startAt, endAt)
+
+  const startIt = () => {
+    setStartAt(new Date());
+    setStatus("RUNNING");
+    start();
+  };
+
+  const endIt = () => {
+    setEndAt(new Date());
+    setStatus("PAUSED");
+    pause();
+  };
+
+  const resume = () => {
+    setStatus("RUNNING");
+    start();
+  };
+
+  const finish = () => {
+    setStatus(null);
+    setStartAt(null);
+    setEndAt(null);
+    reset();
+  };
+
+  return {
+    time,
+    start: startIt,
+    end: endIt,
+    resume,
+    finish,
+    startAt,
+    endAt,
+    status,
+  };
+};
+
 const Main = () => {
   const classes = useStyles();
   const [bg, setBg] = useState("simp");
 
   const prompt = usePrompt("نصب دفترک", InstallTemplate);
 
-  const { time, start, pause, reset, status } = useTimer();
+  const { time, start, end, startAt, endAt, finish, status } = useProperTimer();
 
-  console.log(status);
 
+  
   const renderRootClass = () => {
     switch (bg) {
       case "simp":
@@ -147,8 +191,8 @@ const Main = () => {
         <Timer
           time={time}
           start={start}
-          pause={pause}
-          reset={reset}
+          end={end}
+          finish={finish}
           status={status}
           setBg={setBg}
         />
@@ -158,7 +202,7 @@ const Main = () => {
       )}
       <Slider open={status === "PAUSED"}>
         <div>
-          <EventForm />
+          <EventForm time={time} startAt={startAt} endAt={endAt} />
         </div>
       </Slider>
     </div>

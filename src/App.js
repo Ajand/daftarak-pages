@@ -1,4 +1,6 @@
 import React from "react";
+import "./styles/index.scss";
+
 import {
   createMuiTheme,
   ThemeProvider,
@@ -11,8 +13,10 @@ import rtl from "jss-rtl";
 import DataProvider from "./DataProvider";
 
 import Main from "./modules/Main";
-import EventForm from './modules/Main/EventForm'
+import EventForm from "./modules/Main/EventForm";
 import GuestHandler from "./modules/containers/GuestHandler";
+
+import Report from './modules/Report'
 
 const theme = createMuiTheme({
   direction: "rtl",
@@ -51,7 +55,8 @@ const App = () => {
         <StylesProvider jss={jss}>
           <div className="App">
             <GuestHandler>
-              <Main />
+              {/*<Main />*/}
+              <Report />
             </GuestHandler>
           </div>
         </StylesProvider>

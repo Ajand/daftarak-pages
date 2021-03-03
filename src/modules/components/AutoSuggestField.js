@@ -15,16 +15,15 @@ const useStyles = makeStyles((theme) => ({
       border: "3px solid #617be2",
     },
     position: "relative",
-    color: '#130A36'
+    color: "#130A36",
   },
   label: {
     fontFamily: "Javan",
-    fontSize: "2em",
+    fontSize: "1.5em",
     padding: theme.spacing(0.25),
     display: "inline-block",
     whiteSpace: "nowrap",
-    color: '#130A36'
-
+    color: "#130A36",
   },
   disabledRoot: {
     border: "3px solid #888",
@@ -40,21 +39,38 @@ const useStyles = makeStyles((theme) => ({
   },
   disabledLabel: {
     fontFamily: "Javan",
-    fontSize: "2em",
+    fontSize: "1.5em",
     padding: theme.spacing(0.25),
     display: "inline-block",
     color: "#888",
     whiteSpace: "nowrap",
   },
+  erroredRoot: {
+    border: "3px solid #F76760",
+    borderRadius: theme.spacing(1),
+    width: "100%",
+    padding: theme.spacing(0.25),
+    overflow: "hidden",
+    boxSizing: "border-box",
+    cursor: "not-allowed",
+  },
+  erroredLabel: {
+    fontFamily: "Javan",
+    fontSize: "1.5em",
+    padding: theme.spacing(0.25),
+    display: "inline-block",
+    color: "#F76760",
+    whiteSpace: "nowrap",
+  },
   input: {
     border: 0,
-    fontSize: "2em",
+    fontSize: "1.5em",
     fontFamily: "Javan",
     display: "inline-block",
     padding: theme.spacing(0.25),
     paddingRight: theme.spacing(1),
     outline: "0px !important",
-    color: '#130A36',
+    color: "#130A36",
   },
   inputContainer: {
     display: "flex",
@@ -64,77 +80,74 @@ const useStyles = makeStyles((theme) => ({
     border: "3px solid #130A36",
     borderRadius: theme.spacing(1),
     padding: theme.spacing(0.25),
-    maxHeight: 200,
+    maxHeight: 100,
     overflow: "auto",
     boxSizing: "border-box",
-    color: '#130A36'
-
+    color: "#130A36",
   },
   suggestItem: {
     fontFamily: "Javan",
-    fontSize: "1.8em",
+    fontSize: "1.3em",
     padding: theme.spacing(0.25),
-    color: '#130A36'
-
+    color: "#130A36",
   },
   multiBadgesContainer: {
     marginTop: theme.spacing(1),
     display: "flex",
     flexDirection: "row",
-    paddingBottom: theme.spacing(2),
+    //paddingBottom: theme.spacing(0.5),
     overflowX: "auto",
     overflowY: "hidden",
     alignItems: "baseline",
-    color: '#130A36'
-
+    color: "#130A36",
   },
   badge: {
-    padding: "4px 4px 4px 14px",
+    padding: "2px 2px 2px 8px",
     border: "3px solid #130A36",
     marginRight: theme.spacing(1),
     fontFamily: "Javan",
-    fontSize: "2em",
+    fontSize: "1em",
     borderRadius: 50,
     display: "flex",
     whiteSpace: "nowrap",
     alignItems: "center",
-    color: '#130A36',
+    color: "#130A36",
     background: "#f0f7fb",
-
   },
-
   badgeText: {
     display: "inline-block",
   },
   badgeDelete: {
     display: "flex",
     border: "3px solid #130A36",
-    width: 40,
-    height: 40,
+    width: 30,
+    height: 30,
     borderRadius: 40,
     alignItems: "center",
     justifyContent: "center",
     background: "#F8DF6D",
-    marginLeft: theme.spacing(2),
+    marginLeft: theme.spacing(1),
     cursor: "pointer",
-    color: '#130A36',
-
+    color: "#130A36",
   },
   addBadgeButton: {
     border: "3px solid #130A36",
-    width: 40,
-    height: 40,
+    width: 30,
+    height: 30,
     display: "flex",
     borderRadius: 40,
     alignItems: "center",
     justifyContent: "center",
-    background: "#479967",
-    color: '#130A36',
+    background: "#617be2",
+    color: "white",
     marginLeft: theme.spacing(2),
     cursor: "pointer",
     position: "absolute",
     right: 6,
     top: 6,
+  },
+  icon: {
+    fontSize: "1em",
   },
 }));
 
@@ -146,10 +159,14 @@ const AutoSuggestField = ({
   disabled = false,
   defaultValue = "",
   multi,
+  error = false,
+  value,
+  onChange
 }) => {
   const classes = useStyles();
 
-  const [value, setValue] = useState(defaultValue);
+  //const [value, setValue] = useState(defaultValue);
+  const setValue = onChange
   //const [isFocused, setIsFocused] = useState(false);
   const [multiValues, setMulti] = useState(new Set());
 
@@ -178,7 +195,12 @@ const AutoSuggestField = ({
           <label className={classes.disabledLabel} htmlFor={name}>
             {label}:
           </label>
-          <input className={classes.input} disabled value={value} />
+          <input
+            autoComplete="off"
+            className={classes.input}
+            disabled
+            value={value}
+          />
         </div>
       </div>
     );
@@ -188,12 +210,19 @@ const AutoSuggestField = ({
       <FocusWithin>
         {({ focusProps, isFocused }) => (
           <React.Fragment>
-            <div {...focusProps} className={classes.root}>
+            <div
+              {...focusProps}
+              className={error ? classes.erroredRoot : classes.root}
+            >
               <div className={classes.inputContainer}>
-                <label className={classes.label} htmlFor={name}>
+                <label
+                  className={error ? classes.erroredLabel : classes.label}
+                  htmlFor={name}
+                >
                   {label}:
                 </label>
                 <input
+                  autoComplete="off"
                   className={classes.input}
                   value={value}
                   onChange={(e) => setValue(e.target.value)}
@@ -208,7 +237,7 @@ const AutoSuggestField = ({
                     }}
                     className={classes.addBadgeButton}
                   >
-                    <Add />
+                    <Add className={classes.icon} />
                   </div>
                 )}
               </div>
@@ -246,7 +275,7 @@ const AutoSuggestField = ({
                       onClick={() => removeFromMultiValues(item)}
                       className={classes.badgeDelete}
                     >
-                      <Close />
+                      <Close className={classes.icon} />
                     </div>
                   </div>
                 ))}
@@ -261,12 +290,19 @@ const AutoSuggestField = ({
     <FocusWithin>
       {({ focusProps, isFocused }) => (
         <React.Fragment>
-          <div {...focusProps} className={classes.root}>
+          <div
+            {...focusProps}
+            className={error ? classes.erroredRoot : classes.root}
+          >
             <div className={classes.inputContainer}>
-              <label className={classes.label} htmlFor={name}>
+              <label
+                className={error ? classes.erroredLabel : classes.label}
+                htmlFor={name}
+              >
                 {label}:
               </label>
               <input
+                autoComplete="off"
                 className={classes.input}
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
@@ -301,4 +337,29 @@ const AutoSuggestField = ({
   );
 };
 
-export default AutoSuggestField;
+const helperTextStyles = makeStyles((theme) => ({
+  root: {},
+  helperText: {
+    fontSize: "1em",
+    fontFamily: "iransansdn",
+  },
+  errorHelperText: {
+    fontSize: "1em",
+    fontFamily: "iransansdn",
+    color: "#F76760",
+  },
+}));
+
+const HelperTextProvider = ({ helperText, error, ...rest }) => {
+  const classes = helperTextStyles();
+  return (
+    <div>
+      <AutoSuggestField {...rest} error={error} />
+      <div className={error ? classes.errorHelperText : classes.helperText}>
+        {helperText}
+      </div>
+    </div>
+  );
+};
+
+export default HelperTextProvider;

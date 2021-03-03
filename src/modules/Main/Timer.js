@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Timer = ({ setBg , time, start, pause, reset, status}) => {
+const Timer = ({ setBg , time, start, end, reset, status}) => {
   const classes = useStyles();
 
 
@@ -69,7 +69,7 @@ const Timer = ({ setBg , time, start, pause, reset, status}) => {
             return start();
           }
           setBg("simp");
-          return pause();
+          return end();
         }}
         className={classes.borderRad}
       >
@@ -107,7 +107,7 @@ const Timer = ({ setBg , time, start, pause, reset, status}) => {
           return start();
         }
         setBg("simp");
-        return pause();
+        return end();
       }}
       className={classes.borderRad}
     >
