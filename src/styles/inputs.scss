@@ -1,0 +1,122 @@
+.text-field-container {
+    //background-color: $secondary;
+    min-width: 100%;
+    height: 60px;
+    border-radius: 0.75em 0.75em 0px 0px;
+    box-sizing: border-box;
+    position: relative;
+    padding: 18px 22px 0px 18px;
+    border: 3px solid $border_color;
+    border-bottom: 4px solid $border_color;
+    transition: all $transition_time linear;
+    background-color: white;
+    //overflow: hidden;
+    font-family: Javan;
+    &:focus-within {
+      //border: 3px solid $primary;
+      border-bottom: 4px solid $primary;
+    }
+  }
+  
+  .text-field-container-error {
+    border-bottom: 4px solid $accent_red;
+    &:focus-within {
+      border-bottom: 4px solid $accent_red;
+    }
+  }
+  
+  .text-field-input {
+    position: absolute;
+    bottom: 5px;
+    background-color: inherit;
+    font-family: 'IRANSansDn';
+    font-size: 1.2em;
+    border: 0px;
+    color: $text_dark;
+    outline: none;
+    font-weight: 500;
+    font-size: 15px;
+    width: 90%;
+  }
+  
+  .text-field-label {
+    position: absolute;
+    top: 10px;
+    transition: all $transition_time ease-in-out;
+    color: $border_color;
+    font-weight: 500;
+    padding: 0px 4px;
+    z-index: 300;
+    background-color: $text_light;
+    font-size: 1.4em;
+    box-sizing: border-box;
+
+  }
+  
+  .text-field-label-active {
+    border: 3px solid $border_color;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    top: -20px;
+  }
+  
+  .text-field-input:focus + .text-field-label {
+    border: 3px solid $border_color;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    top: -20px;
+    background-color: $primary;
+  }
+  
+  .text-field-label-error {
+    color: $text_dark;
+  }
+  
+  .text-field-input:focus + .text-field-label.text-field-label-error {
+    border: 3px solid $border_color;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    top: -20px;
+    background-color: $accent_red;
+  }
+  
+  .text-field-helper {
+    margin-right: 22px;
+    margin-top: 4px;
+    font-size: 0.8em;
+    font-weight: 200;
+    font-family: 'IRANSansDN';
+  }
+  
+  .text-field-helper-error {
+    color: $accent_red;
+  }
+  
+  .text-field-container:focus-within + .text-field-helper {
+    //color: $primary;
+  }
+  
+  .text-field-container:focus-within
+    + .text-field-helper.text-field-helper-error {
+    color: $accent_red;
+  }
+  
+  .text-field-icon {
+    font-size: 1.5em;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: $text_dark;
+  }
+  
+  .text-field-input:focus + .text-field-label + .text-field-icon {
+    color: $primary;
+  }
+  
+  .text-field-icon-error {
+    color: $accent_red;
+  }
+  
+  .text-field-input:focus + .text-field-label + .text-field-icon-error {
+    color: $accent_red;
+  }

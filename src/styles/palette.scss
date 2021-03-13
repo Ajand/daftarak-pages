@@ -1,14 +1,24 @@
-$primary: #097888;
-$primary_light: #1f8fa0;
-$primary_dark: #076573;
+$primary: #6ee1a3;
+$primary_light: #89f69a;
+$primary_dark: #6ee1a3;
 
-$secondary: #6a8acf;
-$secondary_light: #94a9dc;
-$secondary_dark: #1b5172;
+$secondary: #e1e269;
+$secondary_light: #fafc80;
+$secondary_dark: #dadc6c;
 
-$accent_red: #ff5a6d;
-$accent_red_light: #ff98a4;
-$accent_red_dark: #f54559;
+/**
+$secondary: #6EE1A3;
+$secondary_light: #89F69A;
+$secondary_dark: #6EE1A3;
+*/
+
+$accent: #48d1d5;
+$accent_light: #71e9c7;
+$accent_dark: #2cb2b4;
+
+$accent_red: #f75878;
+$accent_red_light: #f75878;
+$accent_red_dark: #9d3c53;
 
 $accent_green: #1ecc6c;
 $accent_green_light: #00c485;
@@ -18,10 +28,9 @@ $accent_orange: #ffb432;
 $accent_orange_light: #fce75c;
 $accent_orange_dark: #fe9c5a;
 
-$accent_purple: #7E51D1;
-$accent_purple_light: #A65FE2;
-$accent_purple_dark: #5338AF;
-
+$accent_purple: #7e51d1;
+$accent_purple_light: #a65fe2;
+$accent_purple_dark: #5338af;
 
 // Text Colors
 $text_light: #fefefe;
@@ -29,4 +38,4 @@ $text_dark: black;
 
 $border_color: black;
 
-$disabled_color: #999
+$disabled_color: #bcbcbc;

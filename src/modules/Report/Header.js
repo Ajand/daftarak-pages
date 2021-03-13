@@ -91,12 +91,11 @@ const Header = () => {
   const currWeek = monthDaysArray
     .reduce((pV, cV) => [...pV, ...cV])
     .reduce((pV, cV, index) => {
-      if (moment(cV.toDate()).add(1, 'day').isSame(selectedDay.toDate(), "day"))
+      if (moment(cV.toDate()).add(1, "day").isSame(selectedDay.toDate(), "day"))
         return Math.floor((index + 1) / 7);
       if (pV) return pV;
       return 0;
     }, 0);
-
 
   const nextMonth = () => {
     setSelectedMonthYear(moment(selectedMonthYear.toDate()).add(1, "month"));
@@ -163,8 +162,13 @@ const Header = () => {
               <div
                 key={day.format("jYYYY/jMM/jDD")}
                 onClick={() => {
-                  setSelectedDay(day);
-                  setExpanded(false);
+                  if (
+                    !(day.jMonth() !==
+                    moment(selectedMonthYear.toDate()).jMonth())
+                  ) {
+                    setSelectedDay(day);
+                    setExpanded(false);
+                  }
                 }}
                 className={`report-header-day-picker-item ${
                   day.isSame(new Date(), "day") &&

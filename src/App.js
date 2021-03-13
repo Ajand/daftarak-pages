@@ -16,6 +16,8 @@ import Main from "./modules/Main";
 import EventForm from "./modules/Main/EventForm";
 import GuestHandler from "./modules/containers/GuestHandler";
 
+import SassComponents from './modules/SassComponents'
+
 import Report from './modules/Report'
 
 const theme = createMuiTheme({
@@ -55,8 +57,8 @@ const App = () => {
         <StylesProvider jss={jss}>
           <div className="App">
             <GuestHandler>
-              {/*<Main />*/}
-              <Report />
+              <SassComponents />
+              {/*<Report />*/}
             </GuestHandler>
           </div>
         </StylesProvider>
