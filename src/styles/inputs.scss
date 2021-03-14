@@ -141,7 +141,7 @@
 
 .badge-delete {
   display: flex;
-  border: 3px solid #130a36;
+  border: 3px solid $border_color;
   width: 30px;
   height: 30px;
   border-radius: 40px;
@@ -150,9 +150,34 @@
   background: $accent_red;
   margin-right: 8px;
   cursor: pointer;
-  color: #130a36;
+  color: $text_dark
 }
 
 .badge-icon {
   font-size: 1em;
+}
+
+///
+
+.suggest-root {
+  margin-top: 16px;
+  border: 3px solid $border_color;
+  border-radius: 8px;
+  padding: 2px;
+  max-height: 100px;
+  overflow: auto;
+  box-sizing: border-box;
+  color: $text_dark;
+  background: $secondary_blind;
+}
+
+.suggest-item {
+  font-family: Javan;
+  font-size: 1.3em;
+  padding: 2px;
+  color: $text_dark;
+}
+
+.suggest-item-border-bottom {
+  background: $primary_blind;
 }

@@ -4,7 +4,8 @@ import { FocusWithin } from "react-focus-within";
 import { Close, Add } from "@material-ui/icons";
 
 import Badge from "../SassComponents/Badge";
-import TextField from '../SassComponents/TextField'
+import TextField from "../SassComponents/TextField";
+import SuggestList from "../SassComponents/SuggestList";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -244,7 +245,10 @@ const AutoSuggestField = ({
             {!![...multiValues].length && (
               <div className={classes.multiBadgesContainer}>
                 {[...multiValues].map((item) => (
-                  <Badge key={item} onDelete={() => removeFromMultiValues(item)}>
+                  <Badge
+                    key={item}
+                    onDelete={() => removeFromMultiValues(item)}
+                  >
                     {item}
                   </Badge>
                 ))}
@@ -283,7 +287,7 @@ const AutoSuggestField = ({
           {isFocused &&
             !!suggestions.filter((suggest) => suggest.includes(value)).length &&
             !isOnlyChoice() && (
-              <div {...focusProps} className={classes.suggestRoot}>
+              /*<div {...focusProps} className={classes.suggestRoot}>
                 {suggestions
                   .filter((suggest) => suggest.includes(value))
                   .map((suggest) => (
@@ -298,7 +302,17 @@ const AutoSuggestField = ({
                       {suggest}
                     </div>
                   ))}
-              </div>
+              </div>*/
+              <SuggestList
+                focusProps={focusProps}
+                suggestions={suggestions.filter((suggest) =>
+                  suggest.includes(value)
+                )}
+                onSelect={(e, suggest) => {
+                  setValue(suggest);
+                  e.target.blur();
+                }}
+              />
             )}
         </React.Fragment>
       )}
