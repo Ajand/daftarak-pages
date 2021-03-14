@@ -5,14 +5,14 @@ import PN from "persian-number";
 import { renderTime } from "../helpers";
 
 import Button from "../components/Button";
-import TextField from "../components/TextField";
+import TextField from "../SassComponents/TextField";
 import AutoSuggestField from "../components/AutoSuggestField";
 import Selector from "../components/Selector";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
   section: {
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(3),
   },
   premiumNeeded: {
     fontFamily: "Javan",

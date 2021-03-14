@@ -5,7 +5,7 @@ import { Slide } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    background: "white",
+    background: "#6ee1a3",
     height: "80vh",
     bottom: 0,
     position: "absolute",

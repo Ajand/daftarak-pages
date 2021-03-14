@@ -3,6 +3,9 @@ import { makeStyles } from "@material-ui/core";
 import { FocusWithin } from "react-focus-within";
 import { Close, Add } from "@material-ui/icons";
 
+import Badge from "../SassComponents/Badge";
+import TextField from '../SassComponents/TextField'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     border: "3px solid #130A36",
@@ -101,35 +104,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "baseline",
     color: "#130A36",
   },
-  badge: {
-    padding: "2px 2px 2px 8px",
-    border: "3px solid #130A36",
-    marginRight: theme.spacing(1),
-    fontFamily: "Javan",
-    fontSize: "1em",
-    borderRadius: 50,
-    display: "flex",
-    whiteSpace: "nowrap",
-    alignItems: "center",
-    color: "#130A36",
-    background: "#f0f7fb",
-  },
-  badgeText: {
-    display: "inline-block",
-  },
-  badgeDelete: {
-    display: "flex",
-    border: "3px solid #130A36",
-    width: 30,
-    height: 30,
-    borderRadius: 40,
-    alignItems: "center",
-    justifyContent: "center",
-    background: "#F8DF6D",
-    marginLeft: theme.spacing(1),
-    cursor: "pointer",
-    color: "#130A36",
-  },
+
   addBadgeButton: {
     border: "3px solid #130A36",
     width: 30,
@@ -161,12 +136,12 @@ const AutoSuggestField = ({
   multi,
   error = false,
   value,
-  onChange
+  onChange,
 }) => {
   const classes = useStyles();
 
   //const [value, setValue] = useState(defaultValue);
-  const setValue = onChange
+  const setValue = onChange;
   //const [isFocused, setIsFocused] = useState(false);
   const [multiValues, setMulti] = useState(new Set());
 
@@ -269,15 +244,9 @@ const AutoSuggestField = ({
             {!![...multiValues].length && (
               <div className={classes.multiBadgesContainer}>
                 {[...multiValues].map((item) => (
-                  <div key={item} className={classes.badge}>
-                    <div className={classes.badgeText}> {item}</div>
-                    <div
-                      onClick={() => removeFromMultiValues(item)}
-                      className={classes.badgeDelete}
-                    >
-                      <Close className={classes.icon} />
-                    </div>
-                  </div>
+                  <Badge key={item} onDelete={() => removeFromMultiValues(item)}>
+                    {item}
+                  </Badge>
                 ))}
               </div>
             )}

@@ -57,7 +57,7 @@ const App = () => {
         <StylesProvider jss={jss}>
           <div className="App">
             <GuestHandler>
-              <SassComponents />
+              <Main />
               {/*<Report />*/}
             </GuestHandler>
           </div>

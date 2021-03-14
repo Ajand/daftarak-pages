@@ -28,12 +28,12 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Javan",
     fontSize: "1.2em",
     textAlign: "center",
-    background: "linear-gradient(110deg, #617be2 35%, #576fcb 35%)",
+    background: "linear-gradient(110deg, #48d1d5 35%,   #71e9c7 35%)",
     padding: theme.spacing(0.75),
     borderRadius: 100,
     border: "3px solid #130A36",
     cursor: "pointer",
-    color: "white",
+    color: "black",
 
   },
   purple: {
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Javan",
     fontSize: "1.2em",
     textAlign: "center",
-    background: "linear-gradient(110deg, #479967 35%,   #4faa72 35%)",
+    background: "linear-gradient(110deg, #48d1d5 35%,   #71e9c7 35%)",
     padding: theme.spacing(0.75),
     borderRadius: 100,
     border: "3px solid #130A36",

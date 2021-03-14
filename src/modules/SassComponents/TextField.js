@@ -8,6 +8,7 @@ const TextField = ({
   error,
   helperText,
   Icon,
+  onChange,
   ...rest
 }) => {
   const input = useRef(null);
@@ -32,10 +33,13 @@ const TextField = ({
         }`}
       >
         <input
+                          autoComplete="off"
+
           className="text-field-input"
           value={value}
           id={id}
           ref={input}
+          onChange={(e) => onChange(e.target.value)}
           {...rest}
         />
         <label
