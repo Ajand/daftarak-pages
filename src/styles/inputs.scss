@@ -9,7 +9,7 @@
   border: 3px solid $border_color;
   border-bottom: 4px solid $border_color;
   transition: all $transition_time linear;
-  background-color: $secondary_blind;
+  @include gradback($primary_blind, $secondary_blind);
   //overflow: hidden;
   font-family: Javan;
   &:focus-within {
@@ -100,24 +100,26 @@
   color: $accent_red;
 }
 
-.text-field-icon {
-  font-size: 1.5em;
+.text-field-icon-container {
+  border: 3px solid $border_color;
+  width: 30px;
+  height: 30px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $accent;
+  color: white;
+  margin-left: 16px;
+  cursor: pointer;
   position: absolute;
-  top: 25px;
-  left: 25px;
+  left: 6px;
+  top: 6px;
+}
+
+.text-field-icon {
+  font-size: 1em;
   color: $text_dark;
-}
-
-.text-field-input:focus + .text-field-label + .text-field-icon {
-  color: $secondary;
-}
-
-.text-field-icon-error {
-  color: $accent_red;
-}
-
-.text-field-input:focus + .text-field-label + .text-field-icon-error {
-  color: $accent_red;
 }
 
 .badge-container {
@@ -150,7 +152,7 @@
   background: $accent_red;
   margin-right: 8px;
   cursor: pointer;
-  color: $text_dark
+  color: $text_dark;
 }
 
 .badge-icon {
@@ -162,7 +164,8 @@
 .suggest-root {
   margin-top: 16px;
   border: 3px solid $border_color;
-  border-radius: 8px;
+  border-top: 4px solid $border_color;
+  border-radius: 0px 0px 8px 8px;
   padding: 2px;
   max-height: 100px;
   overflow: auto;
@@ -180,4 +183,18 @@
 
 .suggest-item-border-bottom {
   background: $primary_blind;
+}
+
+//
+
+.multi-badge-container {
+  margin-bottom: 16px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 4px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  align-items: baseline;
+  color: $text_dark;
 }

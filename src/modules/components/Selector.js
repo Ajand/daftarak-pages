@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 40,
     alignItems: "center",
     justifyContent: "center",
-    background: "#F5A8B4",
+    background: "#fafc80",
     marginLeft: theme.spacing(1),
     cursor: "pointer",
     color: "#130A36",

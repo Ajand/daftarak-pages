@@ -5,7 +5,7 @@ import { Slide } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    background: "#6ee1a3",
+    background: "linear-gradient(110deg, #6EE1A3 35%, #89F69A 35%)",
     height: "80vh",
     bottom: 0,
     position: "absolute",

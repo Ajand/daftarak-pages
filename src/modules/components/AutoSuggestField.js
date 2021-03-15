@@ -186,64 +186,37 @@ const AutoSuggestField = ({
       <FocusWithin>
         {({ focusProps, isFocused }) => (
           <React.Fragment>
-            <div
+            <TextField
+              label={label}
+              id={name}
+              value={value}
+              onChange={(v) => setValue(v)}
+              name={name}
+              type={type}
               {...focusProps}
-              className={error ? classes.erroredRoot : classes.root}
-            >
-              <div className={classes.inputContainer}>
-                <label
-                  className={error ? classes.erroredLabel : classes.label}
-                  htmlFor={name}
-                >
-                  {label}:
-                </label>
-                <input
-                  autoComplete="off"
-                  className={classes.input}
-                  value={value}
-                  onChange={(e) => setValue(e.target.value)}
-                  name={name}
-                  type={type}
-                />
-                {value && (
-                  <div
-                    onClick={() => {
-                      setValue("");
-                      addToMultiValues(value);
-                    }}
-                    className={classes.addBadgeButton}
-                  >
-                    <Add className={classes.icon} />
-                  </div>
-                )}
-              </div>
-            </div>
+              Icon={Add}
+              IconAction={() => {
+                setValue("");
+                addToMultiValues(value);
+              }}
+            />
             {isFocused &&
-              !!suggestions
-                .filter((suggest) => suggest.includes(value))
-                .filter((suggest) => !multiValues.has(suggest)).length &&
+              ///TODO do it fucking stupid sbhit
               !isOnlyChoice() && (
-                <div {...focusProps} className={classes.suggestRoot}>
-                  {suggestions
+                <SuggestList
+                  focusProps={focusProps}
+                  suggestions={suggestions
                     .filter((suggest) => suggest.includes(value))
-                    .filter((suggest) => !multiValues.has(suggest))
-                    .map((suggest) => (
-                      <div
-                        className={classes.suggestItem}
-                        onClick={(e) => {
-                          setValue("");
-                          addToMultiValues(suggest);
-                          e.target.blur();
-                        }}
-                        key={suggest}
-                      >
-                        {suggest}
-                      </div>
-                    ))}
-                </div>
+                    .filter((suggest) => !multiValues.has(suggest))}
+                  onSelect={(e, suggest) => {
+                    setValue("");
+                    addToMultiValues(suggest);
+                    e.target.blur();
+                  }}
+                />
               )}
             {!![...multiValues].length && (
-              <div className={classes.multiBadgesContainer}>
+              <div className="multi-badge-container">
                 {[...multiValues].map((item) => (
                   <Badge
                     key={item}
@@ -263,46 +236,18 @@ const AutoSuggestField = ({
     <FocusWithin>
       {({ focusProps, isFocused }) => (
         <React.Fragment>
-          <div
+          <TextField
+            label={label}
+            id={name}
+            value={value}
+            onChange={(v) => setValue(v)}
+            name={name}
+            type={type}
             {...focusProps}
-            className={error ? classes.erroredRoot : classes.root}
-          >
-            <div className={classes.inputContainer}>
-              <label
-                className={error ? classes.erroredLabel : classes.label}
-                htmlFor={name}
-              >
-                {label}:
-              </label>
-              <input
-                autoComplete="off"
-                className={classes.input}
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-                name={name}
-                type={type}
-              />
-            </div>
-          </div>
+          />
           {isFocused &&
             !!suggestions.filter((suggest) => suggest.includes(value)).length &&
             !isOnlyChoice() && (
-              /*<div {...focusProps} className={classes.suggestRoot}>
-                {suggestions
-                  .filter((suggest) => suggest.includes(value))
-                  .map((suggest) => (
-                    <div
-                      className={classes.suggestItem}
-                      onClick={(e) => {
-                        setValue(suggest);
-                        e.target.blur();
-                      }}
-                      key={suggest}
-                    >
-                      {suggest}
-                    </div>
-                  ))}
-              </div>*/
               <SuggestList
                 focusProps={focusProps}
                 suggestions={suggestions.filter((suggest) =>

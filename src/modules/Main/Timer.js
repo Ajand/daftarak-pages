@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "100%",
     display: "flex",
     justifyContent: "center",
+    background: '#DADC6C',
     alignItems: "center",
     border: '5px solid black'
   },

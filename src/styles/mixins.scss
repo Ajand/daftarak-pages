@@ -6,3 +6,7 @@
   align-items: center;
   cursor: pointer;
 }
+
+@mixin gradback($dark_color, $light_color) {
+  background: linear-gradient(110deg, $dark_color 35%, $light_color 35%)
+}

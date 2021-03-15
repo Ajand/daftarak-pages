@@ -85,11 +85,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.spacing(5),
     fontFamily: "Javan",
     width: "80%",
-    color: "#130A36",
+    color: "#000",
     textAlign: "center",
     border: "4px solid #130A36",
     boxSizing: "border-box",
-    background: "#F3E8E7",
+    background: "#E2F9ED",
     right: "10%",
   },
   "@keyframes eventPopper": {

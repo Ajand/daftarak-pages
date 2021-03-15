@@ -6,9 +6,12 @@ const TextField = ({
   value,
   margin,
   error,
+  type,
   helperText,
   Icon,
+  IconAction = () => {},
   onChange,
+  focusProps = [],
   ...rest
 }) => {
   const input = useRef(null);
@@ -25,7 +28,7 @@ const TextField = ({
   };
 
   return (
-    <div style={{ margin: handleMargin() }}>
+    <div {...focusProps} style={{ margin: handleMargin() }}>
       <div
         onClick={() => input.current.focus()}
         className={`text-field-container ${
@@ -33,13 +36,13 @@ const TextField = ({
         }`}
       >
         <input
-                          autoComplete="off"
-
+          autoComplete="off"
           className="text-field-input"
           value={value}
           id={id}
           ref={input}
           onChange={(e) => onChange(e.target.value)}
+          type={type}
           {...rest}
         />
         <label
@@ -51,9 +54,12 @@ const TextField = ({
           {label}
         </label>
         {Icon && (
-          <Icon
-            className={`text-field-icon ${error && "text-field-icon-error"}`}
-          />
+          <div className="text-field-icon-container">
+              <Icon
+                className={`text-field-icon`}
+                onClick={IconAction}
+              />
+          </div>
         )}
       </div>
       {helperText && (
